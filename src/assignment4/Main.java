@@ -39,15 +39,15 @@ public class Main {
 
         // TEST BLOCK                                                                                 TO BE REMOVED
         SocialNetwork network = new SocialNetwork();
-        System.out.println("\nFinal Tweet Counts: Total Tweets: " + reader.totalTweetCount +
+        System.out.println("\nFinal Tweet Counts: Total Tweets: " + tweetsList.size() +
                 ",  INVALID: " + reader.rejectedTweetCount +
                 ",  VALID: " + reader.filteredTweetCount +
-                ",  By Given User: " + filteredUser.size() +
+                ",  Written By: " + filteredUser.size() +
                 ",  In Time Span: " + filteredTimeSpan.size() +
                 ",  Cliques: " + network.findCliques(tweetsList).size() +
                 ",  Containing filter words: " + filteredWords.size());
 
-        System.out.println("5 Most Followed Users: " + network.findKMostFollower(tweetsList,5));
+        System.out.println("5 Most Followed Users: " + network.findKMostFollower(tweetsList,15));
         System.out.println("Cliques Found: " + network.findCliques(tweetsList));
 
 

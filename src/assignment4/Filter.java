@@ -68,12 +68,14 @@ public class Filter {
         Instant start = timespan.getStart();
         Instant end = timespan.getEnd();
 
-
         for(Tweets tweet: tweets){
             //create instant for each tweet
             Instant instant = parseToInstant(tweet.getDate());
 
             if(instant.isAfter(start) && instant.isBefore(end)){
+                filteredList.add(tweet);
+            }
+            else if(instant.equals(start) || instant.equals(end)){
                 filteredList.add(tweet);
             }
 

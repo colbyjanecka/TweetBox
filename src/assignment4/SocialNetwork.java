@@ -48,6 +48,7 @@ public class SocialNetwork {
         List<String> mostFollowers = new ArrayList<>();
         mostFollowers = orderedByFollowers.stream().limit(k).collect(Collectors.toList());
 
+
         return mostFollowers;
     }
 
@@ -97,6 +98,12 @@ public class SocialNetwork {
                 }
             }
         }
+
+
+        User jm = graph.getUser("jm");
+        User jule = graph.getUser("jule");
+        System.out.println("JM : " + jm.getFollowersArray());
+        System.out.println("Jule : " + jule.getFollowersArray());
 
         return result;
     }
@@ -216,6 +223,7 @@ public class SocialNetwork {
                     if(!mentions.contains(mentionedUsername)){
                         String m = mentionedUsername.stream().map(String::valueOf).collect(Collectors.joining());
                         mentions.add(m);
+
                     }
 
 

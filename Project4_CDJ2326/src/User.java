@@ -28,7 +28,7 @@ class User<T> {
     }
 
     void addFollower(User user){
-        if(!followers.contains(user)){
+        if(!followers.contains(user) && !this.name.equals(user.getUsername())){
             followers.add(user);
             followerCount += 1;
         }
